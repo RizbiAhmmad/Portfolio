@@ -11,24 +11,24 @@ import {
       children: [
         {
             path: "/",
-            element: <h1>hi</h1>
+            element: <h1></h1>
         },
-        {
-          path: "about",
-          element: <h1>hi</h1>
-        },
-        {
-          path: "skills",
-          element: <h1>hi</h1>
-        },
-        {
-          path: "education",
-          element: <h1>hi</h1>
-        },
-        {
-          path: "contact",
-          element: <h1>hi</h1>
-        }
+        // {
+        //   path: "about",
+        //   element: <h1>hi</h1>
+        // },
+        // {
+        //   path: "skills",
+        //   element: <h1>hi</h1>
+        // },
+        // {
+        //   path: "education",
+        //   element: <h1>hi</h1>
+        // },
+        // {
+        //   path: "contact",
+        //   element: <h1>hi</h1>
+        // }
       ]
     },
 
