@@ -1,4 +1,5 @@
 import MainLayout from "@/Layouts/MainLayout";
+import Home from "@/Pages/Home";
 import {
     createBrowserRouter,   
   } from "react-router-dom";
@@ -11,7 +12,7 @@ import {
       children: [
         {
             path: "/",
-            element: <h1></h1>
+            element: <Home></Home>
         },
         // {
         //   path: "about",
