@@ -1,6 +1,7 @@
 import React from 'react';
 import Banner from './Banner';
 import HealthcareSolutions from './HealthCareSolutions';
+import MedicalServicesSection from './MedicalServicesSection';
 
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
         <div>
             <Banner />
             <HealthcareSolutions />
+            <MedicalServicesSection />
         </div>
     );
 };
