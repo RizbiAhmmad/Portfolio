@@ -8,7 +8,7 @@ import vaccineImg from "../assets/doctor-main.jpg";
 
 const MedicalServicesSection = () => {
   return (
-    <section className="w-full bg-linear-to-b from-white to-purple-50 px-6 md:px-16 py-20">
+    <section className="w-full bg-white px-6 md:px-16 py-20">
       <div className="flex flex-col md:flex-row items-center justify-between gap-12">
 
         {/* LEFT Image & Video Card */}
@@ -26,7 +26,7 @@ const MedicalServicesSection = () => {
           />
 
           {/* Floating Video Box */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9 }}
@@ -43,7 +43,7 @@ const MedicalServicesSection = () => {
               </button>
             </div>
             <p className="mt-3 font-medium text-gray-700">Watch our video</p>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
 
         {/* RIGHT Content */}

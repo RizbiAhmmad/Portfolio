@@ -17,21 +17,35 @@ export default function HealthcareSolutions() {
         transition={{ duration: 0.8 }}
         className="relative w-full md:w-1/2 flex justify-center"
       >
-        <div className="grid grid-cols-2 gap-12 relative">
+        <div className="grid grid-cols-2 gap-4 md:gap-16 relative">
           <img
             src={nurse1}
             alt="Doctor and patient"
-            className="w-48 md:w-60 h-60 md:h-72 object-cover rounded-2xl shadow-lg"
+            className="w-full h-40 md:w-60 md:h-72 object-cover rounded-2xl shadow-lg"
           />
           <img
             src={nurse2}
             alt="Dentist"
-            className="w-48 md:w-60 h-60 md:h-72 object-cover rounded-2xl shadow-lg mt-12"
+            className="w-full h-40 md:w-60 md:h-72 object-cover rounded-2xl shadow-lg mt-4 md:mt-12"
           />
+          {/* Desktop: absolute stylish position */}
           <img
             src={nurse3}
             alt="Smiling Nurse"
-            className="absolute bottom-[-100px] left-[60px] w-56 md:w-72 h-72 object-cover rounded-2xl shadow-2xl bg-white"
+            className="
+    md:absolute 
+    md:bottom-[-170px] 
+    md:left-[60px] 
+    w-full 
+    h-48 
+    md:w-72 
+    md:h-72 
+    object-cover 
+    rounded-2xl 
+    bg-white
+    col-span-2
+    mt-4
+  "
           />
         </div>
       </motion.div>

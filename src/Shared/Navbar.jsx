@@ -60,7 +60,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-linear-to-r from-purple-600/90 via-indigo-600/90 to-sky-600/90 backdrop-blur-md shadow-lg"
+          ? "bg-linear-to-r from-purple-500/90 via-indigo-500/90 to-sky-500/90 backdrop-blur-md shadow-lg"
           : "bg-transparent"
       }`}
     >
@@ -77,12 +77,12 @@ const Navbar = () => {
               className="h-10 w-10 rounded-full object-cover border-2 border-white shadow-md"
             />
             <h1 className="text-2xl font-extrabold text-sky-400 tracking-wide hover:text-sky-500 transition-colors">
-              Rizbi Ahmmad
+              MediCare
             </h1>
           </div>
 
           {/* 🖥 Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8 bg-white/10 border border-white/20 px-8 py-3 rounded-3xl backdrop-blur-md">
+          <div className="hidden md:flex items-center space-x-8 bg-white/10 border border-white px-8 py-3 rounded-3xl backdrop-blur-md">
             {links.map((link) => (
               <a
                 key={link.href}
@@ -98,7 +98,7 @@ const Navbar = () => {
               >
                 {link.label}
                 {activeLink === link.href && (
-                  <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-sky-400 rounded-full"></span>
+                  <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-sky-400 rounded-full"></span>
                 )}
               </a>
             ))}
