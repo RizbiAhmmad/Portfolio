@@ -3,6 +3,7 @@ import Banner from './Banner';
 import HealthcareSolutions from './HealthCareSolutions';
 import MedicalServicesSection from './MedicalServicesSection';
 import ClinicTreatments from './ClinicTreatments';
+import QualifiedDoctors from './QualifiedDoctors';
 
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
             <HealthcareSolutions />
             <MedicalServicesSection />
             <ClinicTreatments />
+            <QualifiedDoctors />
         </div>
     );
 };

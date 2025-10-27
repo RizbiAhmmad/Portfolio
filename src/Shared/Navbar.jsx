@@ -60,13 +60,13 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-linear-to-r from-purple-500/90 via-indigo-500/90 to-sky-500/90 backdrop-blur-md shadow-lg"
+          ? "bg-white backdrop-blur-md shadow-lg"
           : "bg-transparent"
       }`}
     >
       <div className="mx-auto px-4 sm:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* ✅ Logo & Name */}
+          {/*  Logo & Name */}
           <div
             onClick={() => handleLinkClick("/", { preventDefault: () => {} })}
             className="flex items-center space-x-3 cursor-pointer"
@@ -82,7 +82,7 @@ const Navbar = () => {
           </div>
 
           {/* 🖥 Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8 bg-white/10 border border-white px-8 py-3 rounded-3xl backdrop-blur-md">
+          <div className="hidden md:flex items-center space-x-8 bg-white/10 border border-gray-900 px-8 py-3 rounded-3xl backdrop-blur-md">
             {links.map((link) => (
               <a
                 key={link.href}
@@ -92,7 +92,7 @@ const Navbar = () => {
                   activeLink === link.href
                     ? "text-sky-400"
                     : scrolled
-                    ? "text-white hover:text-sky-300"
+                    ? "text-gray-900 hover:text-sky-300"
                     : "text-gray-900 hover:text-sky-500"
                 }`}
               >
