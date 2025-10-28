@@ -1,6 +1,7 @@
 import MainLayout from "@/Layouts/MainLayout";
 import AboutPage from "@/Pages/AboutPage";
 import Home from "@/Pages/Home";
+import ServicesPage from "@/Pages/ServicePage";
 import {
     createBrowserRouter,   
   } from "react-router-dom";
@@ -19,10 +20,10 @@ import {
           path: "about",
           element: <AboutPage></AboutPage>
         },
-        // {
-        //   path: "skills",
-        //   element: <h1>hi</h1>
-        // },
+        {
+          path: "services",
+          element: <ServicesPage></ServicesPage>
+        },
         // {
         //   path: "education",
         //   element: <h1>hi</h1>
