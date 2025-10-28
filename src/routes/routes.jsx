@@ -1,4 +1,5 @@
 import MainLayout from "@/Layouts/MainLayout";
+import AboutPage from "@/Pages/AboutPage";
 import Home from "@/Pages/Home";
 import {
     createBrowserRouter,   
@@ -14,10 +15,10 @@ import {
             path: "/",
             element: <Home></Home>
         },
-        // {
-        //   path: "about",
-        //   element: <h1>hi</h1>
-        // },
+        {
+          path: "about",
+          element: <AboutPage></AboutPage>
+        },
         // {
         //   path: "skills",
         //   element: <h1>hi</h1>

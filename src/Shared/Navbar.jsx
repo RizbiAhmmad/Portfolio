@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import logo from "../assets/R-logo.jpg";
 import { MdAddCall } from "react-icons/md";
 
@@ -9,52 +9,67 @@ const Navbar = () => {
   const [activeLink, setActiveLink] = useState("/");
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const links = [
     { href: "/", label: "Home" },
-    { href: "#about", label: "About" },
+    { href: "/about", label: "About" },
     { href: "#services", label: "Services" },
     { href: "#contact", label: "Contact" },
   ];
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-      const scrollPosition = window.scrollY;
+  const handleScroll = () => {
+    setScrolled(window.scrollY > 50);
 
-      links.forEach((link) => {
-        if (link.href === "/") {
-          if (scrollPosition < 100) setActiveLink("/");
-          return;
+    // Scroll-based active link only for home page
+    if (location.pathname !== "/") return;
+
+    const scrollPosition = window.scrollY;
+
+    links.forEach((link) => {
+      if (link.href === "/") {
+        if (scrollPosition < 100) setActiveLink("/");
+        return;
+      }
+      const section = document.querySelector(link.href);
+      if (section) {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        if (
+          scrollPosition >= sectionTop - 100 &&
+          scrollPosition < sectionTop + sectionHeight - 100
+        ) {
+          setActiveLink(link.href);
         }
-        const section = document.querySelector(link.href);
-        if (section) {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.offsetHeight;
-          if (
-            scrollPosition >= sectionTop - 100 &&
-            scrollPosition < sectionTop + sectionHeight - 100
-          ) {
-            setActiveLink(link.href);
-          }
-        }
-      });
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [links]);
+      }
+    });
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, [links, location.pathname]);
+
 
   const handleLinkClick = (href, e) => {
-    e.preventDefault();
-    setActiveLink(href);
-    setIsOpen(false);
-    if (href === "/") {
-      navigate("/");
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
-      document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  e.preventDefault();
+  setActiveLink(href);
+  setIsOpen(false);
+
+  // Page route navigation
+  if (href.startsWith("/")) {
+    navigate(href);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    return;
+  }
+
+  // Section scroll navigation (like #services)
+  const section = document.querySelector(href);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
 
   return (
     <nav
